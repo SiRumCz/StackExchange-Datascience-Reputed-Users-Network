@@ -1,0 +1,3 @@
+[submodule "jgraph"]
+	path = jgraph
+	url = https://github.com/patrickfuller/jgraph
