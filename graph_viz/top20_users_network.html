@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jgraph</title>
+        <style>
+            html, body {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: #fff;
+                color: #222;
+                font-family: Helvetica, sans-serif;
+                font-size: 16px;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 14px;
+            }
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+
+                -webkit-transition: 0.15s color ease;
+                -moz-transition: 0.15s color ease;
+                -ms-transition: 0.15s color ease;
+                -o-transition: 0.15s color ease;
+                transition: 0.15s color ease;
+            }
+
+            .graph {
+                height: 100%;
+                width:100%;
+                bottom: 100px;
+            }
+
+            .description {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                left: 30px;
+                margin: 10px;
+                top: 30px;
+            }
+
+            .description a {
+                color: #6a9fb5;
+            }
+
+            .description a:hover {
+                color: #b7ecff;
+            }
+
+            .label {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px;
+                position: absolute;
+            }
+        </style>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="jgraph.min.js"></script>
+    </head>
+    <body>
+        <div class="description">
+            <h1>top 20 users posting network, red node(s) is(are) top 20</h1>
+            <p>
+                If you don't like the <a id="basic">basic</a> shading, jgraph
+                also supports <a id="phong">phong</a>, <a id="lambert">lambert</a>, and <a id="toon">toon</a>.
+            </p>
+        </div>
+        <div class="graph"></div>
+        <script type="text/javascript">
+            graph = {"nodes": {"381": {"color": "0xff3844"}, "843": {"color": "0xff3844"}, "8820": {"color": "0xff3844"}, "14904": {"color": "0xff3844"}, "28175": {"color": "0xff3844"}, "836": {"color": "0xff3844"}, "11097": {"color": "0xff3844"}, "924": {"color": "0xff3844"}, "1330": {"color": "0xff3844"}, "23305": {"color": "0xff3844"}, "2452": {"color": "0xff3844"}, "8878": {"color": "0xff3844"}, "14675": {"color": "0xff3844"}, "34269": {"color": "0xff3844"}, "45264": {"color": "0xff3844"}, "67328": {"color": "0xff3844"}}, "edges": [{"source": 381, "target": 843}, {"source": 381, "target": 8820}, {"source": 381, "target": 14904}, {"source": 381, "target": 28175}, {"source": 843, "target": 843}, {"source": 843, "target": 8820}, {"source": 843, "target": 11097}, {"source": 8820, "target": 8820}, {"source": 8820, "target": 11097}, {"source": 14904, "target": 8820}, {"source": 14904, "target": 14904}, {"source": 28175, "target": 8820}, {"source": 28175, "target": 11097}, {"source": 28175, "target": 28175}, {"source": 836, "target": 843}, {"source": 836, "target": 8820}, {"source": 836, "target": 14904}, {"source": 836, "target": 28175}, {"source": 11097, "target": 843}, {"source": 11097, "target": 8820}, {"source": 11097, "target": 11097}, {"source": 924, "target": 8820}, {"source": 924, "target": 11097}, {"source": 1330, "target": 843}, {"source": 1330, "target": 8820}, {"source": 1330, "target": 14904}, {"source": 1330, "target": 23305}, {"source": 23305, "target": 8820}, {"source": 2452, "target": 843}, {"source": 8878, "target": 8820}, {"source": 14675, "target": 8820}, {"source": 14675, "target": 11097}, {"source": 14675, "target": 28175}, {"source": 34269, "target": 8820}, {"source": 45264, "target": 8820}, {"source": 45264, "target": 14904}, {"source": 45264, "target": 45264}, {"source": 67328, "target": 8820}, {"source": 67328, "target": 14904}, {"source": 67328, "target": 23305}]};
+            jgraph.create('.graph', {directed: false});
+            jgraph.draw(graph);
+            // $.getJSON(datajson, function (graph) {
+            //     jgraph.draw(graph);
+            // });
+
+            $('#toon').click(function () { jgraph.setShader('toon'); });
+            $('#basic').click(function () { jgraph.setShader('basic'); });
+            $('#phong').click(function () { jgraph.setShader('phong'); });
+            $('#lambert').click(function () { jgraph.setShader('lambert'); });
+        </script>
+    </body>
+</html>

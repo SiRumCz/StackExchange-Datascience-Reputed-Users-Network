@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jgraph</title>
+        <style>
+            html, body {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: #fff;
+                color: #222;
+                font-family: Helvetica, sans-serif;
+                font-size: 16px;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 14px;
+            }
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+
+                -webkit-transition: 0.15s color ease;
+                -moz-transition: 0.15s color ease;
+                -ms-transition: 0.15s color ease;
+                -o-transition: 0.15s color ease;
+                transition: 0.15s color ease;
+            }
+
+            .graph {
+                height: 100%;
+                width:100%;
+                bottom: 100px;
+            }
+
+            .description {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                left: 30px;
+                margin: 10px;
+                top: 30px;
+            }
+
+            .description a {
+                color: #6a9fb5;
+            }
+
+            .description a:hover {
+                color: #b7ecff;
+            }
+
+            .label {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px;
+                position: absolute;
+            }
+        </style>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="jgraph.min.js"></script>
+    </head>
+    <body>
+        <div class="description">
+            <h1>{{topic}}</h1>
+            <p>
+                If you don't like the <a id="basic">basic</a> shading, jgraph
+                also supports <a id="phong">phong</a>, <a id="lambert">lambert</a>, and <a id="toon">toon</a>.
+            </p>
+        </div>
+        <div class="graph"></div>
+        <script type="text/javascript">
+            graph = {{jsondata}};
+            jgraph.create('.graph', {directed: false});
+            jgraph.draw(graph);
+            // $.getJSON(datajson, function (graph) {
+            //     jgraph.draw(graph);
+            // });
+
+            $('#toon').click(function () { jgraph.setShader('toon'); });
+            $('#basic').click(function () { jgraph.setShader('basic'); });
+            $('#phong').click(function () { jgraph.setShader('phong'); });
+            $('#lambert').click(function () { jgraph.setShader('lambert'); });
+        </script>
+    </body>
+</html>

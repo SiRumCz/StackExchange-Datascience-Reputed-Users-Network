@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>jgraph</title>
+        <style>
+            html, body {
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: #fff;
+                color: #222;
+                font-family: Helvetica, sans-serif;
+                font-size: 16px;
+                width: 100%;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 14px;
+            }
+
+            a {
+                cursor: pointer;
+                text-decoration: none;
+
+                -webkit-transition: 0.15s color ease;
+                -moz-transition: 0.15s color ease;
+                -ms-transition: 0.15s color ease;
+                -o-transition: 0.15s color ease;
+                transition: 0.15s color ease;
+            }
+
+            .graph {
+                height: 100%;
+                width:100%;
+                bottom: 100px;
+            }
+
+            .description {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                left: 30px;
+                margin: 10px;
+                top: 30px;
+            }
+
+            .description a {
+                color: #6a9fb5;
+            }
+
+            .description a:hover {
+                color: #b7ecff;
+            }
+
+            .label {
+                background-color: #fff;
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 10px;
+                position: absolute;
+            }
+        </style>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script src="jgraph.min.js"></script>
+    </head>
+    <body>
+        <div class="description">
+            <h1>top 150 to 200 users 1000 limited social network</h1>
+            <p>
+                If you don't like the <a id="basic">basic</a> shading, jgraph
+                also supports <a id="phong">phong</a>, <a id="lambert">lambert</a>, and <a id="toon">toon</a>.
+            </p>
+        </div>
+        <div class="graph"></div>
+        <script type="text/javascript">
+            graph = {"nodes": {"75": {"color": "0xff3844"}, "227": {"color": "0xff3844"}, "3044": {"color": "0x0b5394"}, "4676": {"color": "0x0b5394"}, "5091": {"color": "0x0b5394"}, "9035": {"color": "0x0b5394"}, "9225": {"color": "0x0b5394"}, "9461": {"color": "0x0b5394"}, "9793": {"color": "0x0b5394"}, "12363": {"color": "0x0b5394"}, "13625": {"color": "0x0b5394"}, "15613": {"color": "0x0b5394"}, "122": {"color": "0xff3844"}, "88": {"color": "0x0b5394"}, "136": {"color": "0x0b5394"}, "663": {"color": "0x0b5394"}, "947": {"color": "0xff3844"}, "843": {"color": "0x0b5394"}, "10701": {"color": "0x0b5394"}, "10879": {"color": "0x0b5394"}, "11124": {"color": "0x0b5394"}, "964": {"color": "0xff3844"}, "97": {"color": "0x0b5394"}, "133": {"color": "0x0b5394"}, "1097": {"color": "0x0b5394"}, "1147": {"color": "0x0b5394"}, "1241": {"color": "0x0b5394"}, "3430": {"color": "0x0b5394"}, "8820": {"color": "0x0b5394"}, "1077": {"color": "0xff3844"}, "2723": {"color": "0x0b5394"}, "3024": {"color": "0x0b5394"}, "3314": {"color": "0x0b5394"}, "8409": {"color": "0x0b5394"}, "1256": {"color": "0xff3844"}, "1138": {"color": "0x0b5394"}, "2661": {"color": "0x0b5394"}, "3167": {"color": "0x0b5394"}, "4933": {"color": "0x0b5394"}, "8320": {"color": "0x0b5394"}, "8944": {"color": "0x0b5394"}, "61261": {"color": "0x0b5394"}, "1301": {"color": "0xff3844"}, "847": {"color": "0x0b5394"}, "906": {"color": "0x0b5394"}, "1315": {"color": "0x0b5394"}, "1367": {"color": "0xff3844"}, "728": {"color": "0x0b5394"}, "2573": {"color": "0xff3844"}, "5043": {"color": "0x0b5394"}, "15735": {"color": "0x0b5394"}, "15946": {"color": "0x0b5394"}, "18790": {"color": "0x0b5394"}, "20974": {"color": "0x0b5394"}, "23240": {"color": "0x0b5394"}, "39338": {"color": "0x0b5394"}, "2853": {"color": "0xff3844"}, "802": {"color": "0x0b5394"}, "3159": {"color": "0x0b5394"}, "6403": {"color": "0x0b5394"}, "2997": {"color": "0xff3844"}, "793": {"color": "0x0b5394"}, "4621": {"color": "0xff3844"}, "5247": {"color": "0x0b5394"}, "5041": {"color": "0xff3844"}, "2647": {"color": "0x0b5394"}, "5144": {"color": "0x0b5394"}, "8013": {"color": "0x0b5394"}, "58433": {"color": "0x0b5394"}, "10517": {"color": "0xff3844"}, "3151": {"color": "0x0b5394"}, "11097": {"color": "0x0b5394"}, "13023": {"color": "0x0b5394"}, "13100": {"color": "0x0b5394"}, "21560": {"color": "0x0b5394"}, "12876": {"color": "0xff3844"}, "8338": {"color": "0x0b5394"}, "9123": {"color": "0x0b5394"}, "12515": {"color": "0x0b5394"}, "13505": {"color": "0xff3844"}, "15927": {"color": "0x0b5394"}, "16148": {"color": "0x0b5394"}, "13686": {"color": "0xff3844"}, "84": {"color": "0x0b5394"}, "16964": {"color": "0x0b5394"}, "19067": {"color": "0x0b5394"}, "13736": {"color": "0xff3844"}, "30335": {"color": "0x0b5394"}, "53278": {"color": "0x0b5394"}, "14913": {"color": "0xff3844"}, "13291": {"color": "0x0b5394"}, "13891": {"color": "0x0b5394"}, "14372": {"color": "0x0b5394"}, "14895": {"color": "0x0b5394"}, "14994": {"color": "0xff3844"}, "201": {"color": "0x0b5394"}, "989": {"color": "0x0b5394"}, "5211": {"color": "0x0b5394"}, "10327": {"color": "0x0b5394"}, "12206": {"color": "0x0b5394"}, "14586": {"color": "0x0b5394"}, "15115": {"color": "0x0b5394"}, "17116": {"color": "0xff3844"}, "12443": {"color": "0x0b5394"}, "14909": {"color": "0x0b5394"}, "18375": {"color": "0xff3844"}, "28175": {"color": "0x0b5394"}, "38395": {"color": "0x0b5394"}, "43077": {"color": "0x0b5394"}, "18416": {"color": "0xff3844"}, "8643": {"color": "0x0b5394"}, "16244": {"color": "0x0b5394"}, "18434": {"color": "0xff3844"}, "82": {"color": "0x0b5394"}, "8517": {"color": "0x0b5394"}, "13672": {"color": "0x0b5394"}, "27916": {"color": "0x0b5394"}, "46433": {"color": "0x0b5394"}, "20372": {"color": "0xff3844"}, "1426": {"color": "0x0b5394"}, "8432": {"color": "0x0b5394"}, "14360": {"color": "0x0b5394"}, "26019": {"color": "0xff3844"}, "28384": {"color": "0x0b5394"}, "38271": {"color": "0x0b5394"}, "23159": {"color": "0xff3844"}, "1151": {"color": "0x0b5394"}, "20618": {"color": "0x0b5394"}, "29204": {"color": "0x0b5394"}, "31434": {"color": "0x0b5394"}, "49700": {"color": "0x0b5394"}, "50406": {"color": "0x0b5394"}, "51687": {"color": "0x0b5394"}, "59446": {"color": "0x0b5394"}, "63652": {"color": "0x0b5394"}, "24000": {"color": "0xff3844"}, "33701": {"color": "0x0b5394"}, "36935": {"color": "0x0b5394"}, "24895": {"color": "0xff3844"}, "23480": {"color": "0x0b5394"}, "29217": {"color": "0x0b5394"}, "27432": {"color": "0xff3844"}, "6478": {"color": "0x0b5394"}, "26163": {"color": "0x0b5394"}, "26202": {"color": "0x0b5394"}, "45610": {"color": "0x0b5394"}, "27665": {"color": "0xff3844"}, "3436": {"color": "0x0b5394"}, "7812": {"color": "0x0b5394"}, "10522": {"color": "0x0b5394"}, "41929": {"color": "0xff3844"}, "46375": {"color": "0x0b5394"}, "27983": {"color": "0xff3844"}, "14070": {"color": "0x0b5394"}, "15533": {"color": "0x0b5394"}, "38506": {"color": "0x0b5394"}, "73912": {"color": "0x0b5394"}, "29083": {"color": "0xff3844"}, "21024": {"color": "0x0b5394"}, "26800": {"color": "0x0b5394"}, "29781": {"color": "0xff3844"}, "56354": {"color": "0x0b5394"}, "34153": {"color": "0xff3844"}, "9197": {"color": "0x0b5394"}, "16853": {"color": "0x0b5394"}, "17310": {"color": "0x0b5394"}, "32989": {"color": "0x0b5394"}, "33386": {"color": "0x0b5394"}, "51209": {"color": "0x0b5394"}, "37184": {"color": "0xff3844"}, "69822": {"color": "0x0b5394"}, "37330": {"color": "0xff3844"}, "38339": {"color": "0xff3844"}, "50146": {"color": "0x0b5394"}, "51129": {"color": "0x0b5394"}, "65131": {"color": "0x0b5394"}, "75405": {"color": "0x0b5394"}, "27526": {"color": "0x0b5394"}, "38492": {"color": "0x0b5394"}, "65323": {"color": "0x0b5394"}, "38657": {"color": "0xff3844"}, "34165": {"color": "0x0b5394"}, "43921": {"color": "0x0b5394"}, "47832": {"color": "0x0b5394"}, "52089": {"color": "0x0b5394"}, "44039": {"color": "0xff3844"}, "2515": {"color": "0x0b5394"}, "15325": {"color": "0x0b5394"}, "21254": {"color": "0x0b5394"}, "37063": {"color": "0x0b5394"}, "45166": {"color": "0xff3844"}, "24885": {"color": "0x0b5394"}, "53812": {"color": "0xff3844"}, "42772": {"color": "0x0b5394"}, "50833": {"color": "0x0b5394"}, "67605": {"color": "0x0b5394"}, "57453": {"color": "0xff3844"}, "39331": {"color": "0x0b5394"}, "47403": {"color": "0x0b5394"}, "59162": {"color": "0x0b5394"}, "59252": {"color": "0x0b5394"}, "61418": {"color": "0xff3844"}, "37059": {"color": "0x0b5394"}, "67412": {"color": "0xff3844"}, "44680": {"color": "0x0b5394"}, "66759": {"color": "0x0b5394"}, "70066": {"color": "0xff3844"}}, "edges": [{"source": 75, "target": 227}, {"source": 75, "target": 3044}, {"source": 75, "target": 4676}, {"source": 75, "target": 5091}, {"source": 75, "target": 9035}, {"source": 75, "target": 9225}, {"source": 75, "target": 9461}, {"source": 75, "target": 9793}, {"source": 75, "target": 12363}, {"source": 75, "target": 13625}, {"source": 75, "target": 15613}, {"source": 227, "target": 136}, {"source": 227, "target": 663}, {"source": 122, "target": 88}, {"source": 947, "target": 843}, {"source": 947, "target": 9793}, {"source": 947, "target": 10701}, {"source": 947, "target": 10879}, {"source": 947, "target": 11124}, {"source": 964, "target": 97}, {"source": 964, "target": 133}, {"source": 964, "target": 1097}, {"source": 964, "target": 1147}, {"source": 964, "target": 1241}, {"source": 964, "target": 3430}, {"source": 964, "target": 8820}, {"source": 1077, "target": 1077}, {"source": 1077, "target": 2723}, {"source": 1077, "target": 3024}, {"source": 1077, "target": 3314}, {"source": 1077, "target": 8409}, {"source": 1256, "target": 1138}, {"source": 1256, "target": 1241}, {"source": 1256, "target": 2661}, {"source": 1256, "target": 3167}, {"source": 1256, "target": 4933}, {"source": 1256, "target": 8320}, {"source": 1256, "target": 8944}, {"source": 1256, "target": 61261}, {"source": 1301, "target": 847}, {"source": 1301, "target": 906}, {"source": 1301, "target": 1097}, {"source": 1301, "target": 1315}, {"source": 1367, "target": 728}, {"source": 1367, "target": 5091}, {"source": 2573, "target": 5043}, {"source": 2573, "target": 10879}, {"source": 2573, "target": 15735}, {"source": 2573, "target": 15946}, {"source": 2573, "target": 18790}, {"source": 2573, "target": 20974}, {"source": 2573, "target": 23240}, {"source": 2573, "target": 39338}, {"source": 2853, "target": 802}, {"source": 2853, "target": 1241}, {"source": 2853, "target": 3159}, {"source": 2853, "target": 6403}, {"source": 2997, "target": 793}, {"source": 4621, "target": 802}, {"source": 4621, "target": 3430}, {"source": 4621, "target": 5247}, {"source": 4621, "target": 8944}, {"source": 5041, "target": 2647}, {"source": 5041, "target": 3024}, {"source": 5041, "target": 5144}, {"source": 5041, "target": 8013}, {"source": 5041, "target": 8820}, {"source": 5041, "target": 58433}, {"source": 10517, "target": 3151}, {"source": 10517, "target": 11097}, {"source": 10517, "target": 13023}, {"source": 10517, "target": 13100}, {"source": 10517, "target": 21560}, {"source": 12876, "target": 3024}, {"source": 12876, "target": 8338}, {"source": 12876, "target": 9123}, {"source": 12876, "target": 12515}, {"source": 13505, "target": 15927}, {"source": 13505, "target": 16148}, {"source": 13686, "target": 84}, {"source": 13686, "target": 847}, {"source": 13686, "target": 13686}, {"source": 13686, "target": 16964}, {"source": 13686, "target": 19067}, {"source": 13736, "target": 13736}, {"source": 13736, "target": 30335}, {"source": 13736, "target": 53278}, {"source": 14913, "target": 13291}, {"source": 14913, "target": 13891}, {"source": 14913, "target": 14372}, {"source": 14913, "target": 14895}, {"source": 14913, "target": 21560}, {"source": 14994, "target": 122}, {"source": 14994, "target": 201}, {"source": 14994, "target": 802}, {"source": 14994, "target": 989}, {"source": 14994, "target": 2723}, {"source": 14994, "target": 5211}, {"source": 14994, "target": 8820}, {"source": 14994, "target": 9035}, {"source": 14994, "target": 10327}, {"source": 14994, "target": 12206}, {"source": 14994, "target": 12515}, {"source": 14994, "target": 14586}, {"source": 14994, "target": 15115}, {"source": 17116, "target": 5043}, {"source": 17116, "target": 12443}, {"source": 17116, "target": 13891}, {"source": 17116, "target": 14909}, {"source": 18375, "target": 8820}, {"source": 18375, "target": 28175}, {"source": 18375, "target": 30335}, {"source": 18375, "target": 38395}, {"source": 18375, "target": 43077}, {"source": 18416, "target": 8643}, {"source": 18416, "target": 12206}, {"source": 18416, "target": 14909}, {"source": 18416, "target": 16244}, {"source": 18434, "target": 82}, {"source": 18434, "target": 8517}, {"source": 18434, "target": 13672}, {"source": 18434, "target": 27916}, {"source": 18434, "target": 46433}, {"source": 20372, "target": 1426}, {"source": 20372, "target": 8013}, {"source": 20372, "target": 8432}, {"source": 20372, "target": 14360}, {"source": 20372, "target": 26019}, {"source": 20372, "target": 28384}, {"source": 20372, "target": 38271}, {"source": 26019, "target": 26019}, {"source": 23159, "target": 1151}, {"source": 23159, "target": 20618}, {"source": 23159, "target": 23240}, {"source": 23159, "target": 29204}, {"source": 23159, "target": 31434}, {"source": 23159, "target": 49700}, {"source": 23159, "target": 50406}, {"source": 23159, "target": 51687}, {"source": 23159, "target": 59446}, {"source": 23159, "target": 63652}, {"source": 24000, "target": 33701}, {"source": 24000, "target": 36935}, {"source": 24895, "target": 12443}, {"source": 24895, "target": 23480}, {"source": 24895, "target": 29217}, {"source": 27432, "target": 6478}, {"source": 27432, "target": 26163}, {"source": 27432, "target": 26202}, {"source": 27432, "target": 31434}, {"source": 27432, "target": 45610}, {"source": 27665, "target": 3436}, {"source": 27665, "target": 7812}, {"source": 27665, "target": 10522}, {"source": 27665, "target": 28175}, {"source": 27665, "target": 41929}, {"source": 27665, "target": 43077}, {"source": 27665, "target": 46375}, {"source": 27665, "target": 49700}, {"source": 41929, "target": 47832}, {"source": 41929, "target": 50146}, {"source": 41929, "target": 52089}, {"source": 27983, "target": 7812}, {"source": 27983, "target": 14070}, {"source": 27983, "target": 15533}, {"source": 27983, "target": 38506}, {"source": 27983, "target": 59446}, {"source": 27983, "target": 73912}, {"source": 29083, "target": 21024}, {"source": 29083, "target": 26800}, {"source": 29781, "target": 8517}, {"source": 29781, "target": 26202}, {"source": 29781, "target": 56354}, {"source": 34153, "target": 1151}, {"source": 34153, "target": 9197}, {"source": 34153, "target": 13023}, {"source": 34153, "target": 16853}, {"source": 34153, "target": 17310}, {"source": 34153, "target": 32989}, {"source": 34153, "target": 33386}, {"source": 34153, "target": 51209}, {"source": 37184, "target": 8013}, {"source": 37184, "target": 28175}, {"source": 37184, "target": 59446}, {"source": 37184, "target": 61261}, {"source": 37184, "target": 69822}, {"source": 37330, "target": 8013}, {"source": 37330, "target": 38339}, {"source": 37330, "target": 41929}, {"source": 37330, "target": 50146}, {"source": 37330, "target": 51129}, {"source": 37330, "target": 65131}, {"source": 37330, "target": 75405}, {"source": 38339, "target": 27526}, {"source": 38339, "target": 27916}, {"source": 38339, "target": 38339}, {"source": 38339, "target": 38492}, {"source": 38339, "target": 61261}, {"source": 38339, "target": 65323}, {"source": 38657, "target": 28175}, {"source": 38657, "target": 34165}, {"source": 38657, "target": 38657}, {"source": 38657, "target": 43921}, {"source": 44039, "target": 2515}, {"source": 44039, "target": 8517}, {"source": 44039, "target": 13023}, {"source": 44039, "target": 13686}, {"source": 44039, "target": 15325}, {"source": 44039, "target": 17310}, {"source": 44039, "target": 21254}, {"source": 44039, "target": 37063}, {"source": 44039, "target": 50146}, {"source": 44039, "target": 51687}, {"source": 45166, "target": 15613}, {"source": 45166, "target": 23240}, {"source": 45166, "target": 24885}, {"source": 45166, "target": 28175}, {"source": 45166, "target": 43077}, {"source": 45166, "target": 49700}, {"source": 53812, "target": 9461}, {"source": 53812, "target": 24895}, {"source": 53812, "target": 42772}, {"source": 53812, "target": 50833}, {"source": 53812, "target": 53812}, {"source": 53812, "target": 61261}, {"source": 53812, "target": 67605}, {"source": 57453, "target": 16853}, {"source": 57453, "target": 24895}, {"source": 57453, "target": 39331}, {"source": 57453, "target": 47403}, {"source": 57453, "target": 59162}, {"source": 57453, "target": 59252}, {"source": 61418, "target": 37059}, {"source": 61418, "target": 53812}, {"source": 61418, "target": 61261}, {"source": 67412, "target": 44680}, {"source": 67412, "target": 63652}, {"source": 67412, "target": 65323}, {"source": 67412, "target": 66759}, {"source": 70066, "target": 8820}, {"source": 70066, "target": 53278}, {"source": 70066, "target": 63652}, {"source": 70066, "target": 69822}]};
+            jgraph.create('.graph', {directed: false});
+            jgraph.draw(graph);
+            // $.getJSON(datajson, function (graph) {
+            //     jgraph.draw(graph);
+            // });
+
+            $('#toon').click(function () { jgraph.setShader('toon'); });
+            $('#basic').click(function () { jgraph.setShader('basic'); });
+            $('#phong').click(function () { jgraph.setShader('phong'); });
+            $('#lambert').click(function () { jgraph.setShader('lambert'); });
+        </script>
+    </body>
+</html>
